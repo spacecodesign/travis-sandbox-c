@@ -2,7 +2,7 @@ language: c
 
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
-  - free
+  - free -m
   - mount
   - which make; make -v
   - which ld; ld -v
