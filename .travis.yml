@@ -11,7 +11,7 @@ script:
   - free -m
   - mount
   - which bash; bash --version
-  - which ash; ash --version
+  - which ash; apt-cache policy ash
   - which make; make -v
   - which ld; ld -v
   - which gold; gold -v
