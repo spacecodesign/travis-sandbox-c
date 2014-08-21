@@ -4,6 +4,7 @@ script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
   - free -m
   - mount
+  - which bash; bash --version
   - which make; make -v
   - which ld; ld -v
   - which gold; gold -v
