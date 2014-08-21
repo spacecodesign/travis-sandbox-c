@@ -1,5 +1,11 @@
 language: c
 
+before_install:
+  - sudo apt-get update
+  
+install:
+  - sudo apt-get install ash
+
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
   - free -m
