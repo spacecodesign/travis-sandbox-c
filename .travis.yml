@@ -5,6 +5,7 @@ script:
   - free -m
   - mount
   - which bash; bash --version
+  - which ash; ash --version
   - which make; make -v
   - which ld; ld -v
   - which gold; gold -v
