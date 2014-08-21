@@ -3,4 +3,5 @@ language: c
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
   - ld -v
+  - gold -v
   - i586-mingw32msvc-gcc -v
