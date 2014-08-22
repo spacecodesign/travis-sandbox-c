@@ -9,6 +9,7 @@ install:
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
   - free -m
+  - uname -a
   - mount
   - which bash; bash --version
   - which ash; apt-cache policy ash
