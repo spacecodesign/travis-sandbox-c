@@ -2,9 +2,27 @@ language: c
 
 before_install:
   - sudo apt-get update
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/EL6/RPMS/x86_64/cygwin32-binutils-2.24.51-1.el6.x86_64.rpm
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/EL6/RPMS/x86_64/cygwin32-cpp-4.8.2-2.el6.x86_64.rpm
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/EL6/RPMS/x86_64/cygwin32-gcc-4.8.2-2.el6.x86_64.rpm
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/EL6/RPMS/x86_64/cygwin32-gcc-c++-4.8.2-2.el6.x86_64.rpm
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-1.7.31-1.noarch.rpm
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-w32api-headers-3.1.0-2.noarch.rpm
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-w32api-runtime-3.1.0-1.noarch.rpm
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-ncurses-5.9-2.20140524.noarch.rpm
+  - wget ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-expat-2.1.0-2.noarch.rpm
   
 install:
   - sudo apt-get install ash
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/EL6/RPMS/x86_64/cygwin32-binutils-2.24.51-1.el6.x86_64.rpm
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/EL6/RPMS/x86_64/cygwin32-cpp-4.8.2-2.el6.x86_64.rpm
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/EL6/RPMS/x86_64/cygwin32-gcc-4.8.2-2.el6.x86_64.rpm
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/EL6/RPMS/x86_64/cygwin32-gcc-c++-4.8.2-2.el6.x86_64.rpm
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-1.7.31-1.noarch.rpm
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-w32api-headers-3.1.0-2.noarch.rpm
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-w32api-runtime-3.1.0-1.noarch.rpm
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-ncurses-5.9-2.20140524.noarch.rpm
+  - sudo rpm --install --nodeps ftp://ftp.cygwinports.org/pub/cygwinports/fedora-cygwin/RPMS/noarch/cygwin32-expat-2.1.0-2.noarch.rpm
 
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
@@ -17,3 +35,4 @@ script:
   - which ld; ld -v
   - which gold; gold -v
   - which i586-mingw32msvc-gcc; i586-mingw32msvc-gcc -v
+  - which i686-pc-cygwin-gcc; i686-pc-cygwin-gcc -v
