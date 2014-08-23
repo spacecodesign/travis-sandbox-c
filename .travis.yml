@@ -18,6 +18,7 @@ script:
   - ps -wweo pcpu,pmem,args --sort -pmem
   - uname -a
   - mount
+  - cat /etc/sysctl.conf
   - which bash; bash --version
   - which ash; apt-cache policy ash
   - which make; make -v
