@@ -1,6 +1,7 @@
 language: c
 
 before_install:
+  - ps -eo pcpu,pmem,args --sort -pmem
   - sudo apt-get update
   
 install:
