@@ -4,7 +4,7 @@ before_install:
   - free -m
   - ps -eo pcpu,pmem,args --sort -pmem
   - ls /etc/init.d
-  - service mysqld stop
+  - service mysql stop
   - sudo apt-get update
   
 install:
