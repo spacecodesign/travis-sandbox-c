@@ -5,6 +5,8 @@ before_install:
   - ps -wweo pcpu,pmem,args --sort -pmem
   - ls /etc/init.d
   - sudo service mysql stop
+  - sudo service postgresql stop
+  - sudo service rabbitmq-server stop
   - sudo apt-get update
   
 install:
@@ -13,6 +15,7 @@ install:
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
   - free -m
+  - ps -wweo pcpu,pmem,args --sort -pmem
   - uname -a
   - mount
   - which bash; bash --version
