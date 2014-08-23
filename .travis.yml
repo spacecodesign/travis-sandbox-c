@@ -28,3 +28,5 @@ script:
   - which gold; gold -v
   - which i586-mingw32msvc-gcc; i586-mingw32msvc-gcc -v
   - which i686-pc-cygwin-gcc; i686-pc-cygwin-gcc -v
+  - find /usr/lib | grep libmpfr
+  - find /usr/lib | grep libgmp
