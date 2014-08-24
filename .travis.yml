@@ -12,6 +12,10 @@ before_install:
   - sudo service udev stop
   - sudo rm -rf /var/ramfs/mysql
   - sudo rm -rf /var/ramfs/postgresql
+  - SWAP=/tmp/swap
+  - dd if=/dev/zero of=$SWAP bs=1M count=500
+  - mkswap $SWAP
+  - sudo swapon $SWAP
   - sudo apt-get -qq update
   
 install:
