@@ -20,7 +20,6 @@ script:
   - ps -wweo pcpu,pmem,args --sort -pmem
   - uname -a
   - mount
-  - sudo du -sh /var/ramfs/*
   - which bash; bash --version
   - which ash; apt-cache policy ash
   - which make; make -v
