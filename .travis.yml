@@ -9,10 +9,10 @@ before_install:
   - sudo service couchdb stop
   - sudo rm -rf /var/ramfs/mysql
   - sudo rm -rf /var/ramfs/postgresql
-  - sudo apt-get -q update
+  - sudo apt-get -qq update
   
 install:
-  - sudo apt-get -q install ash
+  - sudo apt-get install ash
 
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
