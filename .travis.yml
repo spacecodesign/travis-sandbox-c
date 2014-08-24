@@ -22,6 +22,8 @@ script:
   - free -m
   - ps -wweo pcpu,pmem,args --sort -pmem
   - sudo smem
+  - sysctl vm.swappiness
+  - sysctl vm.overcommit_memory
   - uname -a
   - mount
   - ulimit -a
