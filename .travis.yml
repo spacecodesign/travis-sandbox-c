@@ -15,12 +15,13 @@ before_install:
   - sudo apt-get -qq update
   
 install:
-  - sudo apt-get install ash
+  - sudo apt-get install ash smem
 
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
   - free -m
   - ps -wweo pcpu,pmem,args --sort -pmem
+  - smem
   - uname -a
   - mount
   - ulimit -a
