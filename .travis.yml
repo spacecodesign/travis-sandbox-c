@@ -23,7 +23,7 @@ script:
   - ps -wweo pcpu,pmem,args --sort -pmem
   - sudo smem
   - sysctl vm.swappiness
-  - sudo sysctl -w vm.swappiness=50
+  - sudo echo 50 > /proc/sys/vm/swappiness
   - sysctl vm.swappiness
   - sysctl vm.overcommit_memory
   - uname -a
