@@ -21,7 +21,7 @@ script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
   - free -m
   - ps -wweo pcpu,pmem,args --sort -pmem
-  - smem
+  - sudo smem
   - uname -a
   - mount
   - ulimit -a
