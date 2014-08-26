@@ -12,3 +12,14 @@ script:
   - uname -a
   - mount
   - ulimit -a
+
+before_deploy:
+  - echo "Hello world!" > hello.txt
+  
+deploy:
+  provider: s3
+  access_key_id: $S3_BUILD_KEY_ID
+  secret_access_key: $S3_BUILD_KEY_SECRET
+  bucket: "spacecodesign-dev"
+  skip_cleanup: true
+  upload-dir: build/sandbox
