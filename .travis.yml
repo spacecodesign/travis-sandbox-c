@@ -17,6 +17,7 @@ script:
   - mount
   - ulimit -a
   - ccache -s
+  - echo ${CCACHE_DIR}
 
 before_deploy:
   - echo "Hello world!" > hello.txt
