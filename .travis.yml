@@ -15,7 +15,7 @@ before_install:
   - sudo apt-get -qq update
   
 install:
-  - sudo apt-get install ash smem
+  - sudo apt-get install ash smem ccache
 
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
@@ -33,5 +33,6 @@ script:
   - which ld; ld -v
   - which gold; gold -v
   - which i586-mingw32msvc-gcc; i586-mingw32msvc-gcc -v
+  - which ccache; ccache --version
   - find /usr/lib | grep libmpfr
   - find /usr/lib | grep libgmp
