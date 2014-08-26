@@ -21,6 +21,7 @@ script:
 
 before_deploy:
   - echo "Hello world!" > hello.txt
+  - echo ${SECRET} > secret.txt
   
 deploy:
   provider: s3
