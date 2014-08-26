@@ -4,6 +4,10 @@ before_install:
   - free -m
   - ps -wweo pcpu,pmem,args --sort -pmem
   - ls /etc/init.d
+  - apt-get update -qq
+
+install:
+  - apt-get install ccache
 
 script:
   - NCORES=$(grep --count processor /proc/cpuinfo); echo $NCORES cores
@@ -12,6 +16,7 @@ script:
   - uname -a
   - mount
   - ulimit -a
+  - ccache -s
 
 before_deploy:
   - echo "Hello world!" > hello.txt
