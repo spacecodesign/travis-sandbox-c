@@ -16,6 +16,7 @@ script:
   - uname -a
   - mount
   - ulimit -a
+  - which zip; zip -v
   - ccache -s
   - echo ~/.ccache
 
